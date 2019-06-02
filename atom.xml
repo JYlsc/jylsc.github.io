@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jylsc.github.io</id>
     <title>AI 杂货铺</title>
-    <updated>2019-06-02T15:05:55.379Z</updated>
+    <updated>2019-06-02T17:04:12.315Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jylsc.github.io"/>
     <link rel="self" href="https://jylsc.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://jylsc.github.io/images/avatar.png</logo>
     <icon>https://jylsc.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, AI 杂货铺</rights>
+    <entry>
+        <title type="html"><![CDATA[Simple Word Embedding base Model]]></title>
+        <id>https://jylsc.github.io/post/swem</id>
+        <link href="https://jylsc.github.io/post/swem">
+        </link>
+        <updated>2019-06-02T17:02:27.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="simple-word-embedding-base-model">Simple Word Embedding base Model</h1>
+<p>文献地址</p>
+<blockquote>
+<p><a href="https://www.jiqizhixin.com/articles/2018-06-29-6">基线系统需要受到更多关注：基于词向量的简单模型 | ACL 2018论文解读</a></p>
+<p><a href="https://arxiv.org/pdf/1805.09843.pdf">Simple Word embedding base model</a></p>
+</blockquote>
+<p>大多数NLP任务的NN模型都不是健壮模型，最主要的原因在于文本带来的离散性。</p>
+<p>模型只是拟合数据集<code>上下文共现特征</code>及<code>one-hot-embedding</code>的潜在特征，NN模型并没有真正理解语言。</p>
+<p>大规模预训练模型，本质是指望通过大量无标注文本学习到更好的one-hot-embedding，使得文本由离散数据转换为连续数据时获得更好的潜在特征。</p>
+<p>该论文从embedding出发，证明了大多数任务实际复杂度并不高。</p>
+<p>大多数NLP任务（如：分类、情感分析等）都不需要那么复杂的模型，因此在做技术选型时要充分考虑任务复杂度，无脑堆模型是不值得提倡的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Gridea bug]]></title>
         <id>https://jylsc.github.io/post/gridea-bug</id>

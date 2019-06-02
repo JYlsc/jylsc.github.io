@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | AI 杂货铺</title>
+<title>Simple Word Embedding base Model | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,14 +98,41 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">Simple Word Embedding base Model</h2>
+            <div class="post-date">2019-06-03</div>
             
             <div class="post-content">
-              <p>这是关于的页面，可以在这里向世界介绍你！</p>
+              <h1 id="simple-word-embedding-base-model">Simple Word Embedding base Model</h1>
+<p>文献地址</p>
+<blockquote>
+<p><a href="https://www.jiqizhixin.com/articles/2018-06-29-6">基线系统需要受到更多关注：基于词向量的简单模型 | ACL 2018论文解读</a></p>
+<p><a href="https://arxiv.org/pdf/1805.09843.pdf">Simple Word embedding base model</a></p>
+</blockquote>
+<p>大多数NLP任务的NN模型都不是健壮模型，最主要的原因在于文本带来的离散性。</p>
+<p>模型只是拟合数据集<code>上下文共现特征</code>及<code>one-hot-embedding</code>的潜在特征，NN模型并没有真正理解语言。</p>
+<p>大规模预训练模型，本质是指望通过大量无标注文本学习到更好的one-hot-embedding，使得文本由离散数据转换为连续数据时获得更好的潜在特征。</p>
+<p>该论文从embedding出发，证明了大多数任务实际复杂度并不高。</p>
+<p>大多数NLP任务（如：分类、情感分析等）都不需要那么复杂的模型，因此在做技术选型时要充分考虑任务复杂度，无脑堆模型是不值得提倡的。</p>
 
             </div>
             
+              <div class="tag-container">
+                
+                  <a href="https://jylsc.github.io/tag/-nlp" class="tag">
+                    NLP
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://jylsc.github.io/post/gridea-bug">
+                  <h3 class="post-title">
+                    Gridea bug
+                  </h3>
+                </a>
+              </div>
             
 
             
