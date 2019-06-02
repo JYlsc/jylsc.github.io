@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Simple Word Embedding base Model | AI 杂货铺</title>
+<title>OrientDB 2.2.x 简述 | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -98,38 +98,97 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Simple Word Embedding base Model</h2>
+            <h2 class="post-title">OrientDB 2.2.x 简述</h2>
             <div class="post-date">2019-06-03</div>
             
             <div class="post-content">
-              <h1 id="simple-word-embedding-base-model">Simple Word Embedding base Model</h1>
-<p>文献地址</p>
+              <h1 id="orientdb-22x-简述">OrientDB 2.2.x 简述</h1>
+<h2 id="1相关">1.相关</h2>
 <blockquote>
-<p><a href="https://www.jiqizhixin.com/articles/2018-06-29-6">基线系统需要受到更多关注：基于词向量的简单模型 | ACL 2018论文解读</a></p>
-<p><a href="https://arxiv.org/pdf/1805.09843.pdf">Simple Word embedding base model</a></p>
+<p>OrientDB 是基于 Java 编写的开源NoSQL数据库。</p>
+<p>可作为图数据 、文档 、键-值数据库使用。</p>
+<p>支持SB树、Hash及第三方索引</p>
+<p>支持多主体（主-主，主-从）的分布式架构，可水平扩张数据库吞吐量</p>
+<p>与neo4j 类似的native-index（无索引链接结构）储存结构，可以通过物理地址（RID）进行快速图遍历，并且遍历速度不受图数据库大小的限制</p>
 </blockquote>
-<p>大多数NLP任务的NN模型都不是健壮模型，最主要的原因在于文本带来的离散性。</p>
-<p>模型只是拟合数据集<code>上下文共现特征</code>及<code>one-hot-embedding</code>的潜在特征，NN模型并没有真正理解语言。</p>
-<p>大规模预训练模型，本质是指望通过大量无标注文本学习到更好的one-hot-embedding，使得文本由离散数据转换为连续数据时获得更好的潜在特征。</p>
-<p>该论文从embedding出发，证明了大多数任务实际复杂度并不高。</p>
-<p>大多数NLP任务（如：分类、情感分析等）都不需要那么复杂的模型，因此在做技术选型时要充分考虑任务复杂度，无脑堆模型是不值得提倡的。</p>
+<h2 id="2现状">2.现状</h2>
+<blockquote>
+<p>OrientDB的发展依赖于由其原作者Luca Garulli创建的OrientDB LTD公司领导的开源社区。Google团队提供相关支持</p>
+<p>OrientDB目前在图数据库中排行第三，第一为 Neo4j，拥有一定的社区基础</p>
+<p>分为开源版与收费版，开源版在核心功能上与收费版差异不大</p>
+</blockquote>
+<p>​</p>
+<h2 id="3量级">3.量级</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据库个数</td>
+<td>无限制</td>
+</tr>
+<tr>
+<td>数据库集群数</td>
+<td>32,767个</td>
+</tr>
+<tr>
+<td>集群文档数</td>
+<td>9,223,372万亿</td>
+</tr>
+<tr>
+<td>数据库文档数</td>
+<td>302,231,454,903万亿</td>
+</tr>
+<tr>
+<td>文档大小</td>
+<td>2G，但建议不超过10m</td>
+</tr>
+<tr>
+<td>文档属性数</td>
+<td>20亿</td>
+</tr>
+<tr>
+<td>数据库索引数</td>
+<td>20亿</td>
+</tr>
+<tr>
+<td>查询大小</td>
+<td>20亿行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4限制">4.限制</h2>
+<h3 id="41-文档">4.1 文档</h3>
+<blockquote>
+<p>Orientdb 文档不够详细，为了解决某些问题，需要大量研究。</p>
+<p>Orientdb本身配置文件大量参数仅一句话带过，如不深入研究很难明白每个参数的真实作用。对数据库调优有很大的瓶颈</p>
+<p>国内相关社区及文章相对较少</p>
+</blockquote>
+<h3 id="42-插入速度">4.2 插入速度</h3>
+<blockquote>
+<p>Orientdb 无高效初始化导入模块，在初始化导入大量数据时需要耗费大量时间。使用neo4j-improt 导入4000w点8000w边到neo4j仅需2min30s左右，而Orientdb仅插入4000w点就使用近50min。</p>
+<p>在实际使用过程中，发现Orientdb在批量插入时会占用大量磁盘IO，磁盘负载100%，平均每秒写入60m/s。</p>
+<p>如不修改默认配置中jvm堆外内存，内存会逐渐增大。</p>
+<p><strong>随着大批量边的建立，插入速度会明显下降：由 2w/s 降低到 1000条/s</strong>。猜测导致这种情况是由于jvm堆内存与Orietndb自身缓存发生频繁交换及批量插入事物处理造成。由于文档描述太少，暂时没有找到很好的处理方案。相信这个问题实际是可以解决的</p>
+</blockquote>
+<h3 id="43-分布式局限性">4.3 分布式局限性</h3>
+<blockquote>
+<p>Orientdb 虽支持多主体复制、主从复制以分布式的方式解决图数据库并发量扩展的问题，但是分布式在数据插入时具有局限性。分布式模式下，随着分布式节点的增多，数据同步的开销也就随之增大。</p>
+<p>分布式对插入查询的速度无提升效果，仅为了增加并发数</p>
+</blockquote>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://jylsc.github.io/tag/-nlp" class="tag">
-                    NLP
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://jylsc.github.io/post/gridea-bug">
+                <a href="https://jylsc.github.io/post/sgd">
                   <h3 class="post-title">
-                    Gridea bug
+                    优化算法
                   </h3>
                 </a>
               </div>
