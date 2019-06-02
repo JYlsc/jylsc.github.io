@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>mxnet获取隐层输出 | AI 杂货铺</title>
+<title>CONNECT_CR_SRVR_HELLO : wrong version number | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://jylsc.github.io/favicon.ico?v=1559497831749">
+<link rel="shortcut icon" href="https://jylsc.github.io/favicon.ico?v=1559500633570">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://jylsc.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://jylsc.github.io">
-        <img src="https://jylsc.github.io/images/avatar.png?v=1559497831749" class="site-logo">
+        <img src="https://jylsc.github.io/images/avatar.png?v=1559500633570" class="site-logo">
         <h1 class="site-title">AI 杂货铺</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -98,74 +98,34 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">mxnet获取隐层输出</h2>
-            <div class="post-date">2019-06-03</div>
+            <h2 class="post-title">CONNECT_CR_SRVR_HELLO : wrong version number</h2>
+            <div class="post-date">2019-06-02</div>
             
             <div class="post-content">
-              <hr>
-<p>title: mxnet获取隐层输出
-date: 2018-05-30
-tags:</p>
-<ul>
-<li>code
-categories:</li>
-<li>code</li>
-</ul>
-<hr>
-<p>#mxnet获取隐层输出</p>
-<h2 id="1-使用-symbolblock-获取指定中间层的输出">1. 使用 SymbolBlock 获取指定中间层的输出</h2>
-<pre><code class="language-python">def features_net(vgg):
-    &quot;&quot;&quot;
-    使用 SymbolBlock 获取指定中间层的输出
-    :param vgg:
-    :return:
-    &quot;&quot;&quot;
-    # 获取要输出的层对应symbol列表
-    data = mx.sym.var('data')
-    internals = vgg(data).get_internals()
-    # print(internals.list_outputs())
-    list = [internals['vgg0_conv9_fwd_output'],
-            internals['vgg0_conv0_fwd_output'],
-            internals['vgg0_conv2_fwd_output'],
-            internals['vgg0_conv4_fwd_output'],
-            internals['vgg0_conv8_fwd_output'],
-            internals['vgg0_conv12_fwd_output']]
-
-    # 根据原有网络构建新的网络
-    net = gluon.SymbolBlock(list, data, params=vgg.collect_params())
-    return net
-
-</code></pre>
-<h2 id="2-使用gluon">2. 使用Gluon</h2>
-<pre><code class="language-python">style_layers = [0,5,10,19,28]
-content_layers = [25]
-
-def get_net(pretrained_net, content_layers, style_layers):
-    net = nn.Sequential()
-    for i in range(max(content_layers+style_layers)+1):
-        net.add(pretrained_net.features[i])
-    return net
-    
-def extract_features(x, content_layers, style_layers):
-    contents = []
-    styles = []
-    for i in range(len(net)):
-        x = net[i](x)
-        if i in style_layers:
-            styles.append(x)
-        if i in content_layers:
-            contents.append(x)
-    return contents, styles
-</code></pre>
+              <p>在使用git clone的时候一直提示：</p>
+<p><code>CONNECT_CR_SRVR_HELLO : wrong version number</code></p>
+ <!-- more -->
+<p>问题原因：
+设置了git config http 及https proxy</p>
+<p>将该选项从git config中删除后，恢复正常。</p>
+<p>这个问题导致使用gridea时一直无法连接成功</p>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://jylsc.github.io/tag/__other" class="tag">
+                    Other
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://jylsc.github.io/post/orientdb-22x-jian-shu">
+                <a href="https://jylsc.github.io/post/about">
                   <h3 class="post-title">
-                    OrientDB 2.2.x 简述
+                    关于
                   </h3>
                 </a>
               </div>
