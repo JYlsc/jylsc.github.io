@@ -321,7 +321,7 @@ a {
   color: #495057;
 }
 .sidebar {
-  width: 320px;
+  width: 300px;
   position: fixed;
   left: 0;
   top: 0;
@@ -384,6 +384,7 @@ a {
   padding: 48px 32px;
 }
 .post-item {
+  min-height: 140px;
   display: flex;
   padding-bottom: 32px;
   margin-bottom: 32px;
@@ -396,27 +397,25 @@ a {
   flex: 1;
 }
 .post-item .left .post-title {
-  font-size: 24px;
+  font-size: 20px;
   transition: all 0.3s;
 }
 .post-item .left .post-title:hover {
   color: #212529;
 }
 .post-item .left .post-date {
-  font-size: 18px;
-  padding: 24px 0;
+  font-size: 14px;
+  padding: 15px 0;
   color: #adb5bd;
 }
 .post-item .left .post-abstract {
-  line-height: 1.6rem;
-  word-spacing: 0.05rem;
-  font-size: 16px;
+  font-size: 14px;
   color: #868e96;
 }
 .post-item .right {
   flex-shrink: 0;
   margin-left: 24px;
-  width: 38.2%;
+  width: 30%;
 }
 .post-item .right .feature-container {
   padding-top: 56.25%;
@@ -456,10 +455,10 @@ a {
   margin-bottom: 24px;
 }
 .post-detail .post-title {
-  font-size: 40px;
+  font-size: 30px;
 }
 .post-detail .post-date {
-  font-size: 18px;
+  font-size: 14px;
   padding: 24px 0;
   color: #adb5bd;
 }
@@ -709,7 +708,7 @@ a {
   margin: 32px 0;
 }
 .next-post .post-title {
-  font-size: 24px;
+  font-size: 18px;
 }
 .next-post .next {
   color: #ced4da;
@@ -823,20 +822,23 @@ a {
   }
   .post-item {
     flex-direction: column-reverse;
-    padding-bottom: 16px;
-    margin-bottom: 16x;
+    padding-bottom: 30px;
   }
   .post-item .right {
     width: 100%;
     margin-left: 0;
     margin-bottom: 16px;
   }
+  .post-item .left .post-title {
+    font-size: 18px;
+    transition: all 0.3s;
+  }
   .post-item .left .post-date {
-    font-size: 16px;
-    padding: 16px 0;
+    font-size: 14px;
+    padding: 14px 0;
   }
   .post-item .left .post-abstract {
-    font-size: 16px;
+    font-size: 14px;
   }
   .pagination-container .prev:hover,
   .pagination-container .next:hover {
@@ -877,3 +879,11 @@ a {
   font-size: 16px;
   margin: 4px 8px;
 }
+
+      .sidebar {
+        width: 300px;
+      }
+      .main-container {
+        margin-left: 300px;
+      }
+    

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jylsc.github.io</id>
     <title>AI 杂货铺</title>
-    <updated>2019-06-04T14:43:21.781Z</updated>
+    <updated>2019-06-08T17:39:09.496Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jylsc.github.io"/>
     <link rel="self" href="https://jylsc.github.io/atom.xml"/>
@@ -11,37 +11,16 @@
     <icon>https://jylsc.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, AI 杂货铺</rights>
     <entry>
-        <title type="html"><![CDATA[oppo 语音助手算法内推]]></title>
+        <title type="html"><![CDATA[OPPO NLP算法内推]]></title>
         <id>https://jylsc.github.io/post/oppo-job</id>
         <link href="https://jylsc.github.io/post/oppo-job">
         </link>
         <updated>2019-06-02T18:20:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>oppo NLP算法内推，base 成都 ，实习全职均可</p>
+        <summary type="html"><![CDATA[<p>OPPO NLP算法实习、全职内推</p>
+<p>base 成都 ，语音助手</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>oppo NLP算法内推，base 成都 ，实习全职均可</p>
- <!-- more -->
-<h2 id="nlp算法工程师-高级nlp算法工程师">NLP算法工程师、高级NLP算法工程师</h2>
-<h3 id="要求">要求：</h3>
-<p>具有较强的算法基础，熟练掌握数据结构，对模型底层原理有较深入的了解</p>
-<p>对深度学习模型及原理有较强的理解</p>
-<p>能独立完成文本分类、NER等开发任务</p>
-<p>掌握NLP模型效果调优基本手段，能够独自完成效果优化</p>
-<p>对NLP前沿应用方向有一定自己的见解或工作经历，包括但不限于：KGQA、NLG</p>
-<p>三年及以上NLP相关工作经验</p>
-<h3 id="福利">福利：</h3>
-<p>成都最具竞争力的薪资，不打卡，参与语音助手核心研发</p>
-<h2 id="实习nlp算法实习生">实习：NLP算法实习生</h2>
-<h3 id="要求-2">要求：</h3>
-<p>非应届毕业生，如果是应届毕业生必须通过我司校招</p>
-<p>具有较强的编码基础，能够在导师带领下完成任务</p>
-<p>了解深度学习基本知识，有一定算法基础</p>
-<p>实习全职三到六个月</p>
-<p>特别优秀者可特批offer</p>
-<h3 id="薪资">薪资：</h3>
-<p>针对不同学历发放</p>
-<h3 id="福利-2">福利 :</h3>
-<p>参与语音助手核心研发</p>
-<p>简历发送至：<code>leishichi@oppo.com</code></p>
+        <content type="html"><![CDATA[<p>OPPO NLP算法实习、全职内推</p>
+<p>base 成都 ，语音助手</p>
 ]]></content>
     </entry>
     <entry>
@@ -50,52 +29,22 @@
         <link href="https://jylsc.github.io/post/swem">
         </link>
         <updated>2019-06-02T17:02:27.000Z</updated>
-        <content type="html"><![CDATA[<p>文献地址</p>
-<blockquote>
-<p><a href="https://www.jiqizhixin.com/articles/2018-06-29-6">基线系统需要受到更多关注：基于词向量的简单模型 | ACL 2018论文解读</a></p>
-<p><a href="https://arxiv.org/pdf/1805.09843.pdf">Simple Word embedding base model</a></p>
-</blockquote>
-<p>大多数NLP任务的NN模型都不是健壮模型，最主要的原因在于文本带来的离散性。</p>
-<p>模型只是拟合数据集<code>上下文共现特征</code>及<code>one-hot-embedding</code>的潜在特征，NN模型并没有真正理解语言。</p>
-<p>大规模预训练模型，本质是指望通过大量无标注文本学习到更好的one-hot-embedding，使得文本由离散数据转换为连续数据时获得更好的潜在特征。</p>
-<p>该论文从embedding出发，证明了大多数任务实际复杂度并不高。</p>
-<p>大多数NLP任务（如：分类、情感分析等）都不需要那么复杂的模型，因此在做技术选型时要充分考虑任务复杂度，无脑堆模型是不值得提倡的。</p>
+        <summary type="html"><![CDATA[<p>Simple Word embedding base model 论文解读</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Simple Word embedding base model 论文解读</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[CONNECT_CR_SRVR_HELLO : wrong version number]]></title>
-        <id>https://jylsc.github.io/post/git-bug</id>
-        <link href="https://jylsc.github.io/post/git-bug">
+        <id>https://jylsc.github.io/post/connect_cr_srvr_hello-wrong-version-number</id>
+        <link href="https://jylsc.github.io/post/connect_cr_srvr_hello-wrong-version-number">
         </link>
         <updated>2019-06-02T14:48:27.000Z</updated>
         <summary type="html"><![CDATA[<p>在使用git clone的时候一直提示：</p>
-<p><code>CONNECT_CR_SRVR_HELLO : wrong version number</code></p>
+<p>CONNECT_CR_SRVR_HELLO : wrong version number</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>在使用git clone的时候一直提示：</p>
-<p><code>CONNECT_CR_SRVR_HELLO : wrong version number</code></p>
- <!-- more -->
-<p>问题原因：
-设置了git config http 及https proxy</p>
-<p>将该选项从git config中删除后，恢复正常。</p>
-<p>这个问题导致使用gridea时一直无法连接成功</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://jylsc.github.io/post/about</id>
-        <link href="https://jylsc.github.io/post/about">
-        </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>Breeno 语音助手算法</p>
-<p>欢迎内推NLP相关简历</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Breeno 语音助手算法</p>
-<p>欢迎内推NLP相关简历</p>
-<!-- more -->
-<p>QQ ：<code>2194938136</code></p>
-<p>Wechat : <code>aizhp_net</code></p>
-<p>Email : <code>leishichi@oppo.com</code></p>
-<p>Github : <a href="https://github.com/JYlsc">JYlsc</a></p>
+<p>CONNECT_CR_SRVR_HELLO : wrong version number</p>
 ]]></content>
     </entry>
 </feed>
