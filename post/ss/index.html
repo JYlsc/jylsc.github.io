@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | AI 杂货铺</title>
+<title>SS 锐速搭建 | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -115,23 +115,74 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
-            
-              <div class="feature-container" style="background-image: url('https://jylsc.github.io/post-images/about.jpg')">
-              </div>
+            <h2 class="post-title">SS 锐速搭建</h2>
+            <div class="post-date">2019-06-22</div>
             
             <div class="post-content">
-              <p>Breeno 语音助手算法</p>
-<p>欢迎内推NLP相关简历</p>
+              <p>基于vps 搭建SS 及使用锐速加速</p>
 <!-- more -->
-<p>QQ ：<code>2194938136</code></p>
-<p>Wechat : <code>aizhp_net</code></p>
-<p>Email : <code>leishichi@oppo.com</code></p>
-<p>Github : <a href="https://github.com/JYlsc">JYlsc</a></p>
+<h2 id="系统环境准备">系统环境准备</h2>
+<p>操作系统 ：Centos 6 x86_64<br>
+更新系统内核：</p>
+<pre><code class="language-sh">yum install wget net-tools -y &amp;&amp; wget --no-check-certificate http://soft.paozailushang.com/vps/huanneihe.sh &amp;&amp; bash huanneihe.sh
+</code></pre>
+<h2 id="安装锐速">安装锐速</h2>
+<pre><code class="language-sh">wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh &amp;&amp; chmod +x appex.sh &amp;&amp; bash appex.sh install
+</code></pre>
+<h2 id="卸载锐速">卸载锐速</h2>
+<pre><code class="language-sh">wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh &amp;&amp; chmod +x appex.sh &amp;&amp; bash appex.sh uninstall
+</code></pre>
+<h2 id="安装git">安装git</h2>
+<pre><code class="language-sh">yum -y install git
+</code></pre>
+<h2 id="代码安装ss">代码安装SS</h2>
+<pre><code class="language-sh"># 安装pip
+yum install python-setuptools
+easy_install pip
+wget  https://raw.githubusercontent.com/pypa/get-pip/master/2.6/get-pip.py		
+python2.6 get-pip.py
+
+# 安装ss
+pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
+
+# 设置config
+{
+    &quot;server&quot;:&quot;0.0.0.0&quot;,
+    &quot;server_port&quot;:443,
+    &quot;local_address&quot;:&quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;xxx&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-gcm&quot;	
+}
+
+
+
+# 停止和启动
+ssserver -c /etc/shadowsocks/config.json -d start
+ssserver -c /etc/shadowsocks/config.json -d stop
+
+</code></pre>
 
             </div>
             
+              <div class="tag-container">
+                
+                  <a href="https://jylsc.github.io/tag/label-other" class="tag">
+                    Other
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://jylsc.github.io/post/oppo-job">
+                  <h3 class="post-title">
+                    OPPO NLP算法内推
+                  </h3>
+                </a>
+              </div>
             
 
             
