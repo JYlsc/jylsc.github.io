@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | AI 杂货铺</title>
+<title>Python 中文、标点识别 | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -115,23 +115,106 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">Python 中文、标点识别</h2>
+            <div class="post-date">2019-09-05</div>
             
-              <div class="feature-container" style="background-image: url('https://jylsc.github.io/post-images/about.jpg')">
+              <div class="feature-container" style="background-image: url('https://jylsc.github.io/post-images/20190905.jpg')">
               </div>
             
             <div class="post-content">
-              <p>Breeno 语音助手算法</p>
-<p>欢迎内推NLP相关简历</p>
-<!-- more -->
-<p>QQ ：<code>2194938136</code></p>
-<p>Wechat : <code>aizhp_net</code></p>
-<p>Email : <code>leishichi@oppo.com</code></p>
-<p>Github : <a href="https://github.com/JYlsc">JYlsc</a></p>
+              <p>最近在看BERT源码，发现了几个很有意思的代码：<br>
+使用python 判断是否为中文、标点、空白字符等</p>
+<!-- more --> 
+<ul>
+<li>判断是否为标点</li>
+</ul>
+<pre><code class="language-python">def _is_punctuation(char):
+  &quot;&quot;&quot;Checks whether `chars` is a punctuation character.&quot;&quot;&quot;
+  cp = ord(char)
+  # We treat all non-letter/number ASCII as punctuation.
+  # Characters such as &quot;^&quot;, &quot;$&quot;, and &quot;`&quot; are not in the Unicode
+  # Punctuation class but we treat them as punctuation anyways, for
+  # consistency.
+  if ((cp &gt;= 33 and cp &lt;= 47) or (cp &gt;= 58 and cp &lt;= 64) or
+      (cp &gt;= 91 and cp &lt;= 96) or (cp &gt;= 123 and cp &lt;= 126)):
+    return True
+  cat = unicodedata.category(char)
+  if cat.startswith(&quot;P&quot;):
+    return True
+  return False
+</code></pre>
+<ul>
+<li>判断是否为中文</li>
+</ul>
+<pre><code class="language-python">  def _is_chinese_char(self, char):
+    &quot;&quot;&quot;Checks whether CP is the codepoint of a CJK character.&quot;&quot;&quot;
+    # This defines a &quot;chinese character&quot; as anything in the CJK Unicode block:
+    #   https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_(Unicode_block)
+    #
+    # Note that the CJK Unicode block is NOT all Japanese and Korean characters,
+    # despite its name. The modern Korean Hangul alphabet is a different block,
+    # as is Japanese Hiragana and Katakana. Those alphabets are used to write
+    # space-separated words, so they are not treated specially and handled
+    # like the all of the other languages.
+		cp = ord(char)
+    if ((cp &gt;= 0x4E00 and cp &lt;= 0x9FFF) or  #
+        (cp &gt;= 0x3400 and cp &lt;= 0x4DBF) or  #
+        (cp &gt;= 0x20000 and cp &lt;= 0x2A6DF) or  #
+        (cp &gt;= 0x2A700 and cp &lt;= 0x2B73F) or  #
+        (cp &gt;= 0x2B740 and cp &lt;= 0x2B81F) or  #
+        (cp &gt;= 0x2B820 and cp &lt;= 0x2CEAF) or
+        (cp &gt;= 0xF900 and cp &lt;= 0xFAFF) or  #
+        (cp &gt;= 0x2F800 and cp &lt;= 0x2FA1F)):  #
+      return True
+
+    return False
+</code></pre>
+<ul>
+<li>判断空白字符</li>
+</ul>
+<pre><code class="language-python">def _is_whitespace(char):
+  &quot;&quot;&quot;Checks whether `chars` is a whitespace character.&quot;&quot;&quot;
+  # \t, \n, and \r are technically contorl characters but we treat them
+  # as whitespace since they are generally considered as such.
+  if char == &quot; &quot; or char == &quot;\t&quot; or char == &quot;\n&quot; or char == &quot;\r&quot;:
+    return True
+  cat = unicodedata.category(char)
+  if cat == &quot;Zs&quot;:
+    return True
+  return False
+
+
+def _is_control(char):
+  &quot;&quot;&quot;Checks whether `chars` is a control character.&quot;&quot;&quot;
+  # These are technically control characters but we count them as whitespace
+  # characters.
+  if char == &quot;\t&quot; or char == &quot;\n&quot; or char == &quot;\r&quot;:
+    return False
+  cat = unicodedata.category(char)
+  if cat in (&quot;Cc&quot;, &quot;Cf&quot;):
+    return True
+  return False
+</code></pre>
 
             </div>
             
+              <div class="tag-container">
+                
+                  <a href="https://jylsc.github.io/tag/label-other" class="tag">
+                    Other
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://jylsc.github.io/post/ss">
+                  <h3 class="post-title">
+                    SS 锐速搭建
+                  </h3>
+                </a>
+              </div>
             
 
             

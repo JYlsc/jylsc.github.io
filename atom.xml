@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jylsc.github.io</id>
     <title>AI 杂货铺</title>
-    <updated>2019-06-22T13:31:12.735Z</updated>
+    <updated>2019-09-05T14:04:33.555Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jylsc.github.io"/>
     <link rel="self" href="https://jylsc.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://jylsc.github.io/images/avatar.png</logo>
     <icon>https://jylsc.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, AI 杂货铺</rights>
+    <entry>
+        <title type="html"><![CDATA[Python 中文、标点识别]]></title>
+        <id>https://jylsc.github.io/post/20190905</id>
+        <link href="https://jylsc.github.io/post/20190905">
+        </link>
+        <updated>2019-09-05T13:58:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近在看BERT源码，发现了几个很有意思的代码：<br>
+使用python 判断是否为中文、标点、空白字符等</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近在看BERT源码，发现了几个很有意思的代码：<br>
+使用python 判断是否为中文、标点、空白字符等</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SS 锐速搭建]]></title>
         <id>https://jylsc.github.io/post/ss</id>
