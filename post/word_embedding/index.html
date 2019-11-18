@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://jylsc.github.io/favicon.ico?v=1573999246224">
+<link rel="shortcut icon" href="https://jylsc.github.io/favicon.ico?v=1574095206527">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://jylsc.github.io/styles/main.css">
 
@@ -45,7 +45,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://jylsc.github.io">
-        <img src="https://jylsc.github.io/images/avatar.png?v=1573999246224" class="site-logo">
+        <img src="https://jylsc.github.io/images/avatar.png?v=1574095206527" class="site-logo">
         <h1 class="site-title">AI 杂货铺</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -124,6 +124,7 @@
 <!-- more -->
 <hr>
 <p>要了解啥是<code>词向量</code>，首先要从NLP处理流程说起。</p>
+<h2 id="字典序">字典序</h2>
 <p>文本对于计算机来说就是一个个鬼画符，计算机看不懂也没办法直接处理</p>
 <p>因此往往NLP任务中的第一步就是：</p>
 <blockquote>
@@ -133,11 +134,16 @@
 <p>其实最简单直接的一个方法就是将文本转换为<code>字典序</code>，也就是说这个<code>汉字</code>是字典中的<code>第几个</code></p>
 <p>就像<code>Abandon</code> 是英语字典中永远的第<code>1</code>个字母一样</p>
 <p>那么<code>Abandon</code>就可以用数字<code>1</code>来表示</p>
-<p>依此类推，<code>happy</code> 可能对应着</p>
-<p>这样就已经迈出了让计算机看懂文字的第一步</p>
-<p>随之第二个问题来了：【字典序】只表示了某一个字词在词典里面的顺序，光从【字典序】上来看，第1个字和第2、第100、第1000个字并没有什么具体的联系。也就是说【字典序】是一个离散数字 （离散数据只能是某些既定的值，连续数据可以是一个范围里任何的值）</p>
-<p>深度学习模型恰好是一个非常轴只认识连续数据的玩意，因此就想着怎么把离散的【字典序】转换为连续值。</p>
-<p>这时候就引入了one-hot 编码。</p>
+<p>依此类推，<code>happy</code> 可能对应第着<code>2345</code>个词</p>
+<p>通过类似的操作，就初步完成了让计算机看懂文字的第一步</p>
+<p>这种方式也被称为<code>标签编码</code>或者<code>整数编码</code></p>
+<h2 id="one-hot编码-独热编码">one-hot编码 （独热编码）</h2>
+<p>我们已经能够将文本转换为字典序，但对于NLP而言还是无法直接使用字典序</p>
+<p>因为字典序的整数之间存在<code>自然排序关系</code>：后出现词的字典序 &gt; 先出现词的字典序</p>
+<p>但实际上字词之间并<code>不存在</code>对应的<code>自然排序关系</code>，每个字词理应等价</p>
+<p>因此如果直接使用<code>字典序</code>会让模型假设字词间存在自然的次序关系，从而导致结果不佳或得到意外的结果</p>
+<p>这种情况下，就要对整数表示使用 <code>One-Hot</code> 编码了。One-Hot 编码会去除整数编码，并为每个整数值都创建一个二值变量。</p>
+<p>在颜色（color）的示例中，有 3 种类别，因此需要 3 个二值变量进行编码。对应的颜色位置上将被标为“1”，其它颜色位置上会被标为“0”。</p>
 
             </div>
             

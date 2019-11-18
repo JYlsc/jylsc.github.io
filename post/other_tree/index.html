@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>白话NLP | AI 杂货铺</title>
+<title>打印目录结构 | AI 杂货铺</title>
 <meta name="description" content="AI 杂货铺">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://jylsc.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -108,30 +114,101 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 白话NLP</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://jylsc.github.io/post/word_embedding">
-                  <h2 class="post-title">【白话NLP】什么是词向量</h2>
-                </a>
-                <div class="post-date">
-                  2019-11-13
-                </div>
-                <div class="post-abstract">
-                  <p>想了解NLP 绕不开的第一个概念就是词向量。<br>
-什么叫词向量，他又是干什么的呢？怎么最通俗易懂的描述<code>词向量</code>呢？</p>
+          <div class="post-detail">
+            <h2 class="post-title">打印目录结构</h2>
+            <div class="post-date">2019-11-19</div>
+            
+            <div class="post-content">
+              <p>mac windows 打印目录结构</p>
+<!-- more -->
+<h2 id="1-tree-安装">1. tree 安装</h2>
+<pre><code class="language-sh">brew install tree
+</code></pre>
+<h2 id="2-常用命令">2. 常用命令</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tree -d</td>
+<td>只显示文件夹</td>
+</tr>
+<tr>
+<td>ree -L n</td>
+<td>显示项目的层级。n表示层级数。</td>
+</tr>
+<tr>
+<td>tree -a</td>
+<td>查看某个文件夹下的所有文件</td>
+</tr>
+<tr>
+<td>tree -I pattern</td>
+<td>过滤不想要显示的文件或者文件夹</td>
+</tr>
+<tr>
+<td>ree &gt; tree.md</td>
+<td>将项目结构输出到tree.md这个文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3示例">3.示例</h2>
+<pre><code class="language-sh"># 显示某个项目下2层的所有文件结构，同时又过滤node_modules文件夹
+tree -L 2 -I &quot;node_modules&quot;
+</code></pre>
+<ul>
+<li>输出结果如下：</li>
+</ul>
+<pre><code>  .
+  ├── backend
+  │   ├── backend
+  │   ├── manage.py
+  │   ├── odds
+  │   └── templates
+  ├── frontend
+  │   ├── README.md
+  │   ├── build
+  │   ├── config
+  │   ├── index.html
+  │   ├── package.json
+  │   ├── src
+  │   └── static
+  └── tree.md
+</code></pre>
 
-                </div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://jylsc.github.io/tag/label-other" class="tag">
+                    Other
+                  </a>
+                
               </div>
-              
-            </article>
-          
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://jylsc.github.io/post/word_embedding">
+                  <h3 class="post-title">
+                    【白话NLP】什么是词向量
+                  </h3>
+                </a>
+              </div>
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -153,6 +230,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '07bb7dacf85695e4b995',
+        clientSecret: '1d8d9f9e8a384cff9d0f28b5ea1e5905551a12ce',
+        repo: 'github.io.gittalk',
+        owner: 'JYlsc',
+        admin: ['JYlsc'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
