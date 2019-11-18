@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jylsc.github.io</id>
     <title>AI 杂货铺</title>
-    <updated>2019-09-05T14:04:33.555Z</updated>
+    <updated>2019-11-18T16:34:01.285Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jylsc.github.io"/>
     <link rel="self" href="https://jylsc.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://jylsc.github.io/images/avatar.png</logo>
     <icon>https://jylsc.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, AI 杂货铺</rights>
+    <entry>
+        <title type="html"><![CDATA[【白话NLP】什么是词向量]]></title>
+        <id>https://jylsc.github.io/post/word_embedding</id>
+        <link href="https://jylsc.github.io/post/word_embedding">
+        </link>
+        <updated>2019-11-13T15:14:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>想了解NLP 绕不开的第一个概念就是词向量。<br>
+什么叫词向量，他又是干什么的呢？怎么最通俗易懂的描述<code>词向量</code>呢？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>想了解NLP 绕不开的第一个概念就是词向量。<br>
+什么叫词向量，他又是干什么的呢？怎么最通俗易懂的描述<code>词向量</code>呢？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python 中文、标点识别]]></title>
         <id>https://jylsc.github.io/post/20190905</id>
